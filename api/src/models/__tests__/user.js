@@ -21,7 +21,8 @@ import {getUserConstructor, generateUser} from './helpers/utils'
 // 3. Change submitted from `false` to `true`
 // 4. And you're all done!
 /*
-http://ws.kcd.im/?ws=Testing&e=Fix%20Bugs&em=dancogari@gmail.com*/
+http://ws.kcd.im/?ws=Testing&e=Fix%20Bugs&em=
+*/
 test.skip('I submitted my elaboration and feedback', () => {
   const submitted = false // change this when you've submitted!
   expect(true).toBe(submitted)
