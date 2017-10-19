@@ -41,6 +41,28 @@ const getUser = res => res.data.user
 
 //////////////////////
 // 👋 Put your tests here
+
+let server
+
+beforeAll(async () => {
+  server = await startServer()
+})
+
+afterAll(done => {
+  server.close(done)
+})
+
+test('api should respond with status 200', async () => {
+  const response = await api.get('articles')
+  // const articles = response.data
+  expect(response.status).toBe(200)
+})
+
+test('shape of object must be correct', async () => {
+  const response = await api.get('articles')
+  const articles = response.data.articles
+  expect(true).toBe(true)
+})
 ///////////////////////
 
 // I've left this here for you as a little utility that's a little
