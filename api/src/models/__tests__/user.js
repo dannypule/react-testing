@@ -13,6 +13,19 @@ import {getUserConstructor, generateUser} from './helpers/utils'
 // totally fine (the client will handle the default)
 // so don't worry about checking that case.
 
+test('toProfileJSONFor returns the correct object properties', () => {
+  const rawUser = {
+    username: 'foo',
+    bio: 'bio',
+    following: false,
+    image: 'http://example.com/avatar.png',
+  }
+
+  const user = generateUser(rawUser)
+  const userFor = user.toProfileJSONFor()
+
+  expect(userFor).toMatchObject(rawUser)
+})
 
 //////// Elaboration & Feedback /////////
 // When you've finished with the exercises:

@@ -2,6 +2,9 @@ import axios from 'axios'
 import faker from 'faker'
 import {generateArticleForClient} from '../../../other/generate/article'
 import generateUserData from '../../../other/generate/user'
+// api/src/routes/api/articles.js
+// http://localhost:3000/api/articles
+ 
 // you're going to need to start the server before all the tests
 // start and close the server after all the tests are finished.
 // startServer is a function that returns a promise which resolves

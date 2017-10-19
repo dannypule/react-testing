@@ -17,7 +17,25 @@
 // **Remember** to write a simple test to cover a simple use case. Then
 // write code to make that test pass. Then refactor your code to clean
 // it up if needed. Then continue the cycle until you cover all use cases.
+// arrayify() -> []
+// arrayify(1) -> [1]
+// arrayify([1,2,3]) -> [1,2,3]
 import arrayify from '../arrayify'
+
+test('returns an empty array if no arguments are passed', () => {
+  const res = arrayify()
+  expect(res).toEqual([])
+})
+
+test('returns [value] if value is passed', () => {
+  const res = arrayify(1)
+  expect(res).toEqual([1])
+})
+
+test('returns an array of the same items if an array is passed', () => {
+  const res = arrayify([1, 2, 3])
+  expect(res).toEqual([1, 2, 3])
+})
 
 
 //////// Elaboration & Feedback /////////
@@ -27,10 +45,10 @@ import arrayify from '../arrayify'
 // 3. Change submitted from `false` to `true`
 // 4. And you're all done!
 /*
-http://ws.kcd.im/?ws=Testing&e=TDD&em=
+http://ws.kcd.im/?ws=Testing&e=TDD&em=kojkusan@gmail.com
 */
-test.skip('I submitted my elaboration and feedback', () => {
-  const submitted = false // change this when you've submitted!
+test('I submitted my elaboration and feedback', () => {
+  const submitted = true // change this when you've submitted!
   expect(true).toBe(submitted)
 })
 ////////////////////////////////

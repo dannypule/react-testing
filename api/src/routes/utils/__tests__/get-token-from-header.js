@@ -15,12 +15,32 @@
 // tests to ensure that that use case is always supported.
 import getTokenFromHeader from '../get-token-from-header'
 
-test('this is the title of your test', () => {
-  // this is where you put your test code. Write code that will
-  // throw an error if getTokenFromHeader has a bug. The `expect`
-  // global is a utility that makes writting such assertions easier,
-  // but you can do it however you like.
+test(`getTokenFromHeader returns with with token if 
+there is a token in header`, () => {
+  const token = 'some.token.thing'
+  const req = getReq(token)
+  
+  const res = getTokenFromHeader(req)
+  expect(res).toEqual(token)
 })
+
+test('getTokenFromHeader returns null if there is no token from header', () => {
+  const req = getReq(null)
+  const res = getTokenFromHeader(req)
+  expect(res).toEqual(null)
+})
+
+function getReq(token) {
+  let auth = `Token ${token}`
+  if (!token) {
+    auth = ''
+  }
+  return {
+    headers: {
+      authorization: auth,
+    },
+  }
+}
 
 //////// Elaboration & Feedback /////////
 // When you've finished with the exercises:
@@ -29,10 +49,10 @@ test('this is the title of your test', () => {
 // 3. Change submitted from `false` to `true`
 // 4. And you're all done!
 /*
-http://ws.kcd.im/?ws=Testing&e=API%20Unit&em=
+http://ws.kcd.im/?ws=Testing&e=API%20Unit&em=kojikusan@gmail.com
 */
-test.skip('I submitted my elaboration and feedback', () => {
-  const submitted = false // change this when you've submitted!
+test('I submitted my elaboration and feedback', () => {
+  const submitted = true // change this when you've submitted!
   expect(true).toBe(submitted)
 })
 ////////////////////////////////
